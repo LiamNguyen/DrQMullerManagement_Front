@@ -64,7 +64,23 @@ body {
 	padding-right: 0;
 }
 
-legend {
-	margin-bottom: 0px;
-	color: white;
+.form-control {
+	border-width: 0px 0px 3px 0px !important;
+}
+
+.form-control:focus {
+	border-color: purple !important;
+}
+
+.form-group-custom {
+	margin-bottom: 25px !important;
+}
+
+.btn-primary {
+	background-color: #8f00b3 !important;
+	border-color: #660080 !important;
+}
+
+.btn-primary:hover {
+	background-color: #7a0099 !important;
 }
