@@ -3,6 +3,11 @@
 	src: url(assets/fonts/Pacifico.ttf);
 }
 
+@font-face {
+	font-family: Villa;
+	src: url(assets/fonts/Villa.ttf);
+}
+
 html {
 	width: 100%;
 	height: 100%;
@@ -27,12 +32,21 @@ body {
 	width: 100%;
 }
 
-.mp-navbar-header {
+.navbar-header {
 	color: white;
 	font-family: Pacifico;
 	font-size: 40px;
 	margin: auto;
-	width: 40%;
+	padding-left: 25px;
+}
+
+.mp-navbar-right {
+	float: right;
+	color: white;
+	font-family: Villa;
+	font-size: 30px;
+	padding-top: 25px;
+	padding-right: 25px;
 }
 
 .mp-cabinet {
@@ -48,4 +62,9 @@ body {
 	padding-bottom: 20px;
 	padding-left: 0;
 	padding-right: 0;
+}
+
+legend {
+	margin-bottom: 0px;
+	color: white;
 }
