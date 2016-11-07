@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Management Portal</title>
+    <link rel="icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+    <script src="assets/scripts/jquery-1.10.2.min.js"></script>
+    <script src="assets/scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="mp-cabinet">
+        <div class="cabinet-sidebar">
+            <ul class="cabinet-menu">
+                <li class="active">
+                    <a href="#home">
+                        <i class="glyphicon glyphicon-home page-active"></i>
+                        <span class="page-active">Trang chủ</span>
+                    </a>
+                </li>
+                <li class="separator"></li>
+                <li>
+                    <a href="#appointment">
+                        <i class="glyphicon glyphicon-list"></i>
+                        <span>Quản Lý Lịch Hẹn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#schedule">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                        <span>Quản Lý Liệu Trình</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#customer">
+                        <i class="glyphicon glyphicon-user"></i>
+                        <span>Quản Lý Khách Hàng</span>
+                    </a>
+                </li>
+                <li class="separator"></li>
+                <li>
+                    <a href="#instruction">
+                        <i class="glyphicon glyphicon-info-sign"></i>
+                        <span>Hướng Dẫn</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#signout">
+                        <i class="glyphicon glyphicon-log-out"></i>
+                        <span>Đăng Thoát</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="cabinet-sidebar-content">
+            <div class="cabinet-container">
+                <div id="home" class="cabinet-container-item active">
+                    <div class="row">
+                        <div class="col-md-6 col-md-offset-6">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker6'>
+                                        <input type='text' class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <div class='input-group date' id='datetimepicker7'>
+                                        <input type='text' class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="appointment" class="cabinet-container-item"><p>appointment</p></div>
+                <div id="schedule" class="cabinet-container-item"><p>schedule</p></div>
+                <div id="customer" class="cabinet-container-item"><p>customer</p></div>
+                <div id="instruction" class="cabinet-container-item"><p>instruction</p></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('.glyphicon.glyphicon-calendar').click(function() {
+                alert("test");
+            });
+        });
+    });
+</script>
+</body>
+</html>
