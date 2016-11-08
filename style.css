@@ -171,7 +171,6 @@ legend {
 .cabinet-menu li {
 	height: 70px;
 	border-radius: 6px;
- 	transition: background 0.07s ease 0.07s;
 }
 
 .cabinet-menu li:hover {
@@ -215,7 +214,6 @@ legend {
     right: 0px;
     bottom: 0px;
     overflow-y: auto;
-    border-style: solid;
 }
 
 .cabinet-container {
@@ -228,6 +226,36 @@ legend {
 
 .cabinet-container-item.active {
 	display: block;
+}
+
+.info-container {
+	width: 190px;
+	min-width: 190px;
+}
+
+.info-head {
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	border-style: solid;
+	border-collapse: collapse;
+	border-color: grey;
+	border-width: 0px 0px 1px 0px;
+}
+
+.info-content {
+	text-align: center;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.panel-custom {
+	margin-bottom: 0px !important;
+}
+
+.datepicker-width-constraint {
+	width: 180px;
+	min-width: 175px;
 }
 
 
