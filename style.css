@@ -61,6 +61,7 @@ body {
 	width: 100%;
 	height: 100%;
 	position: absolute;
+	padding-top: 70px;
 	overflow: auto;
 }
 
@@ -80,6 +81,11 @@ body {
     background-color: white !important;
     border: none !important;
     padding: 0 !important;
+    min-width: 132px;
+}
+
+.input-group-addon-profile {
+	text-align: left;
 }
 
 .glyphicon-custom {
@@ -100,6 +106,7 @@ body {
 
 .btn {
 	font-weight: bold !important;
+	width: 100px;
 }
 
 .btn-primary {
@@ -152,7 +159,6 @@ legend {
 
 .cabinet-sidebar {
 	margin:0;
-	padding-top: 70px;
 	height: 100%;
 	width: 270px;
 	box-shadow: rgba(0, 0, 0, 0.14902) 2px 2px 4px;
@@ -257,6 +263,18 @@ legend {
 .datepicker-width-constraint {
 	width: 180px;
 	min-width: 175px;
+}
+
+.tbl_Schedule table thead tr th {
+	text-align: center;
+}
+
+.tbl_Schedule table tbody tr td {
+	text-align: center;
+}
+
+.tbl_Schedule table tbody tr th {
+	width: 70px !important;
 }
 
 

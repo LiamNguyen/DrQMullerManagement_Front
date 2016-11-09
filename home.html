@@ -44,7 +44,7 @@
                 </li>
                 <li class="separator"></li>
                 <li>
-                    <a href="#appointment">
+                    <a href="#appointment" disabled>
                         <i class="glyphicon-custom glyphicon glyphicon-list"></i>
                         <span>Quản Lý Lịch Hẹn</span>
                     </a>
@@ -76,11 +76,20 @@
                 </li>
             </ul>
         </div>
+
+<!--Page Content-->
+
         <div class="cabinet-sidebar-content">
             <div class="cabinet-container" style="padding-left: 40px !important">
+
+<!--Home Page-->
+
                 <div id="home" class="cabinet-container-item active">
                     <p>Trang chu</p>
                 </div>
+
+<!--Appointment Page-->
+
                 <div id="appointment" class="cabinet-container-item">
                     <div class="row">
                         <div class="col-md-2 datepicker-width-constraint">
@@ -127,19 +136,19 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="panel panel-default col-md-11" style="box-shadow: rgba(0, 0, 0, 0.14902) 3px 3px 10px 2px;">
-                            <div class="col-md-4 col-md-offset-8" style="margin-top: 20px;margin-bottom: 10px">
-                                <div class="input-group" style="width: 100%;position: relative;">
-                                    <input type="text" class="form-control form-control-custom" placeholder="Tìm theo ngày hoặc tên khách hàng" style="width: 70% !important" name="txt_Search" id="txt_Search">
-                                    <span class="glyphicon glyphicon-search" style="position: absolute;font-size: 1.5em; padding-left: 5px; padding-top: 5px"></span>
-                                </div>
+                        <div class="col-md-offset-6" style="margin-bottom: 20px">
+                            <div class="input-group" style="width: 100%;position: relative;">
+                                <input type="text" class="form-control form-control-custom" placeholder="Tìm theo ngày hoặc tên khách hàng" style="width: 70% !important" name="txt_Search" id="txt_Search">
+                                <span class="glyphicon glyphicon-search" style="position: absolute;font-size: 1.5em; padding-left: 5px; padding-top: 5px"></span>
                             </div>
+                        </div>
+                        <div class="panel panel-default col-md-11" style="box-shadow: rgba(0, 0, 0, 0.14902) 3px 3px 10px 2px;">
                             <div>
                                 <table class="table">
                                     <thead>
                                         <tr>
                                             <th>Mã lịch hẹn</th>
-                                            <th>Chương trình</th>
+                                            <th>Liệu trình</th>
                                             <th>Ngày bắt đầu</th>
                                             <th>Ngày kết thúc</th>
                                             <th>Trung tâm</th>
@@ -149,11 +158,19 @@
                                     <tbody>
                                         <tr>
                                             <td>1</td>
-                                            <td>Smart Voucher</td>
+                                            <td>Smart Choice</td>
                                             <td>15.02.2016</td>
                                             <td>15.03.2016</td>
                                             <td>Nguyễn Thị Minh Khai</td>
                                             <td>Nguyễn Thiên Phúc</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Regular Choice</td>
+                                            <td>24.05.2016</td>
+                                            <td>24.06.2016</td>
+                                            <td>Võ Thị Sáu</td>
+                                            <td>Lưu Kiến Lân</td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -161,62 +178,282 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button id="btn_ExportPDF" class="btn-primary btn col-md-1">PDF</button>
-                        <button id="btn_ExportCSV" class="btn-primary btn col-md-1">Excel</button>
+                        <button id="btn_ExportPDF" class="btn-primary btn">PDF</button>
+                        <button id="btn_ExportCSV" class="btn-primary btn">Excel</button>
                     </div>
                 </div>
+
+<!--Schedule Page-->
+
                 <div id="schedule" class="cabinet-container-item">
                     <div class="row">
-                        <div class="col-md-3 info-container panel">
-                            <div class="panel panel-custom">
-                               <div class="panel-body">
-                                    <table class="table">
-                                        <div class="info-head"><p>Thông tin khách hàng</p></div>
-                                        <tr>
-                                            <th scope="row">Mã khách hàng:</th>
-                                            <td>CN612</td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">Khách hàng: </th>
-                                            <td>Nguyễn Thiên Phúc</td>
-                                        </tr>
-                                        <tr>
-                                            
-                                        </tr>
-                                        <tr>
-                                            
-                                        </tr>
-                                    </table>
+                        <div>
+                            <div class="col-md-5 info-container panel" style="min-width: 390px">
+                                <div class="panel panel-custom">
+                                    <div class="panel-body">
+                                        <table class="table">
+                                            <div class="info-head"><p>Thông tin khách hàng</p></div>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">Mã khách hàng:</th>
+                                                    <td>CN612</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Khách hàng:</th>
+                                                    <td>Nguyễn Thiên Phúc</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Điện thoại:</th>
+                                                    <td>0468574938</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Email:</th>
+                                                    <td>phuc.nguyen@edenred.com</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Loại khách hàng:</th>
+                                                    <td>VIP Customer</td>
+                                                </tr>
+                                            </tbody>        
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-3 info-container panel">
-                            <div class="panel panel-custom">
-                               <div class="panel-body">
-                                    <div class="info-head"><p>Số buổi đã đến</p></div>
-                                    <div class="info-content"><p>24</p></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 info-container panel">
-                            <div class="panel panel-custom">
-                               <div class="panel-body">
-                                    <div class="info-head"><p>Số buổi trong 1 liệu trình</p></div>
-                                    <div class="info-content"><p>60</p></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3 info-container panel">
-                            <div class="panel panel-custom">
-                               <div class="panel-body">
-                                    <div class="info-head"><p>Quá trình đạt</p></div>
-                                    <div class="info-content"><p>40%</p></div>
+                            <div class="col-md-5 col-md-offset-1 info-container panel" style="min-width: 390px">
+                                <div class="panel panel-custom">
+                                    <div class="panel-body">
+                                        <table class="table">
+                                            <tbody>
+                                                <div class="info-head"><p>Thông tin dịch vụ</p></div>
+                                                <tr>
+                                                    <th scope="row">Liệu trình:</th>
+                                                    <td>Smart Choice</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Ngày bắt đầu:</th>
+                                                    <td>15.02.2016</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Ngày kết thúc:</th>
+                                                    <td>15.03.2016</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Trung tâm:</th>
+                                                    <td>Nguyễn Thị Minh Khai</td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">Số buổi đã đến:</th>
+                                                    <td>24 (40%)</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-md-offset-6" style="margin-top: 20px;margin-bottom: 20px">
+                            <div class="input-group" style="width: 100%;position: relative;">
+                                <input type="text" class="form-control form-control-custom" placeholder="Tìm theo ngày hoặc tên khách hàng" style="width: 70% !important" name="txt_Search" id="txt_Search">
+                                <span class="glyphicon glyphicon-search" style="position: absolute;font-size: 1.5em; padding-left: 5px; padding-top: 5px"></span>
+                            </div>
+                        </div>
+                        <div class="panel panel-default col-md-11" style="box-shadow: rgba(0, 0, 0, 0.14902) 3px 3px 10px 2px;">
+                            <div class="tbl_Schedule">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th></th>
+                                            <th>Thứ Hai</th>
+                                            <th>Thứ Ba</th>
+                                            <th>Thứ tư</th>
+                                            <th>Thứ năm</th>
+                                            <th>Thứ sáu</th>
+                                            <th>Thứ bảy</th>
+                                            <th>Chủ Nhật</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Tuần 1</th>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td>X</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Tuần 2</th>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Tuần 3</th>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Tuần 4</th>
+                                            <td>X</td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Tuần 5</th>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td>X</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Tuần 6</th>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">Tuần 7</th>
+                                            <td>X</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>X</td>
+                                            <td>X</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button id="btn_ExportPDF" class="btn-primary btn">PDF</button>
+                        <button id="btn_ExportCSV" class="btn-primary btn">Excel</button>
+                    </div>
                 </div>
-                <div id="customer" class="cabinet-container-item"><p>customer</p></div>
+
+<!--Customer Page-->
+
+                <div id="customer" class="cabinet-container-item">
+                    <div class="row">
+                        <div class="col-md-5 info-container panel" style="min-width: 390px">
+                            <div class="panel panel-custom">
+                                <div class="panel-body">
+                                    <table class="table">
+                                        <div class="info-head"><p>Thông tin dịch vụ hiện tại</p></div>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">Loại khách hàng:</th>
+                                                <td>VIP Customer</td>
+                                           </tr>
+                                           <tr>
+                                               <th scope="row">Điện thoại:</th>
+                                               <td>0468435439</td>
+                                            </tr>
+                                           <tr>
+                                                <th scope="row">Liệu trình:</th>
+                                                <td>Smart Choice</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">Tiến độ liệu trình:</th>
+                                                <td>40%</td>
+                                            </tr>
+                                        </tbody>        
+                                    </table>
+                                </div>
+                              </div>
+                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-offset-6" style="margin-bottom: 20px">
+                            <div class="input-group" style="width: 100%;position: relative;">
+                                <input type="text" class="form-control form-control-custom" placeholder="Tìm theo ngày hoặc tên khách hàng" style="width: 70% !important" name="txt_Search" id="txt_Search">
+                                <span class="glyphicon glyphicon-search" style="position: absolute;font-size: 1.5em; padding-left: 5px; padding-top: 5px"></span>
+                            </div>
+                        </div>
+                        <div class="panel panel-default col-md-11" style="box-shadow: rgba(0, 0, 0, 0.14902) 3px 3px 10px 2px;">
+                            <div>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Mã khách hàng</th>
+                                            <th>Tên khách hàng</th>
+                                            <th>Ngày sinh</th>
+                                            <th>Giới tính</th>
+                                            <th>Địa chỉ</th>
+                                            <th>Email</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>Nguyễn Thiên Phúc</td>
+                                            <td>06.10.1996</td>
+                                            <td>Nam</td>
+                                            <td>Hồ Chí Minh</td>
+                                            <td>phuc.nguyen@edenred.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>Nguyễn Quang Minh</td>
+                                            <td>18.11.1999</td>
+                                            <td>Nam</td>
+                                            <td>Hồ Chí Minh</td>
+                                            <td>minh.nguyen1811@gmail.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td>Nguyễn Cao Độ</td>
+                                            <td>02.04.1965</td>
+                                            <td>Nam</td>
+                                            <td>Hồ Chí Minh</td>
+                                            <td>do.nguyen0204@gmail.com</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td>Lưu Thị Hồng Điệp</td>
+                                            <td>29.11.1964</td>
+                                            <td>Nữ</td>
+                                            <td>Hồ Chí Minh</td>
+                                            <td>diep.luu2911@gmail.com</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <button id="btn_ExportPDF" class="btn-primary btn">PDF</button>
+                        <button id="btn_ExportCSV" class="btn-primary btn">Excel</button>
+                    </div>
+                </div>
+
+<!--Instruction Page-->
+
                 <div id="instruction" class="cabinet-container-item"><p>instruction</p></div>
             </div>
         </div>
@@ -230,6 +467,15 @@
             $(this).children('span').addClass('page-active').parent('a').parent('li').siblings().children('a').children('span').removeClass('page-active');
             $(this).children('i').addClass('page-active').parent('a').parent('li').siblings().children('a').children('i').removeClass('page-active');
             e.preventDefault();        
+        });
+        $('.navbar .mp-navbar-right ul li img').on('click', function(e) {
+            document.location.href = "profile.html";
+        });
+        $('.navbar .mp-navbar-right ul li p').on('click', function(e) {
+            document.location.href = "profile.html";
+        });
+        $('.notification-icon').on('click', function(e) {
+            document.location.href = "login.html";
         });
     });
     </script>
