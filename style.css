@@ -231,6 +231,7 @@ legend {
 .info-container {
 	width: 190px;
 	min-width: 190px;
+	box-shadow: rgba(0, 0, 0, 0.14902) 3px 3px 10px 2px !important;
 }
 
 .info-head {
