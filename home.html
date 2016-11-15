@@ -6,11 +6,13 @@
     <link rel="icon" href="assets/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+
     <script src="assets/scripts/jquery-1.10.2.min.js"></script>
     <script src="assets/scripts/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="assets/scripts/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
     <div class="navbar navbar-fixed-top">
@@ -94,7 +96,7 @@
                     <div class="row">
                         <div class="col-md-2 datepicker-width-constraint">
                             <div class="input-group">
-                                <input class="form-control" type="text" id="from" name="from">
+                                <input class="form-control" type="text" id="page_From" name="page_From">
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -102,7 +104,7 @@
                         </div>
                         <div class="col-md-2 datepicker-width-constraint">
                             <div class="input-group">
-                                <input class="form-control" type="text" id="to" name="to">
+                                <input class="form-control" type="text" id="page_To" name="page_To">
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -178,8 +180,127 @@
                         </div>
                     </div>
                     <div class="row">
-                        <button id="btn_ExportPDF" class="btn-primary btn">PDF</button>
+                        <button id="btn_AppDetail" class="btn-primary btn">PDF</button>
                         <button id="btn_ExportCSV" class="btn-primary btn">Excel</button>
+                    </div>
+
+<!--MODAL POPUP-->
+                    <div id="dialog-form" title="Chi tiết lịch hẹn"> 
+                        <form>
+                            <div class="form-group" style="padding-top: 20px">
+                                <div class="input-group">
+                                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important">
+                                        <label class="control-label label-bold">Khách hàng</label>
+                                    </span>
+                                    <input type="text" id="txt_Customer" class="form-control form-control-custom">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important">
+                                        <label class="control-label label-bold">Liệu trình</label>
+                                    </span>
+                                    <div class="input-group" style="margin-left: 15px;width: 85%">
+                                        <div class="selectContainer">
+                                            <select class="form-control" name="color" id="cmb_Voucher">
+                                                <option value="">Liệu trình</option>
+                                                <option value="cmb_Smart">Smart Choice</option>
+                                                <option value="cmb_Regular">Regular Choice</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important">
+                                        <label class="control-label label-bold">Ngày bắt đầu</label>
+                                    </span>
+                                    <div class="input-group" style="margin-left: 15px">
+                                        <input class="form-control" type="text" id="from" name="from">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important">
+                                        <label class="control-label label-bold">Ngày kết thúc</label>
+                                    </span>
+                                    <div class="input-group" style="margin-left: 15px">
+                                        <input class="form-control" type="text" id="to" name="to">
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important">
+                                        <label class="control-label label-bold">Trung tâm</label>
+                                    </span>
+                                    <div class="input-group" style="margin-left: 15px; width: 85%">
+                                        <div class="selectContainer">
+                                            <select class="form-control" name="color" id="cmb_Location">
+                                                <option value="1">Trần Quang Diệu</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+<!--FEATURE TO BE ADDED AFTER VERSION 2 IS RELEASED-->
+
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important; width: 100px">
+                                        <select class="form-control" name="color" id="cmb_DayOne">
+                                            <option value="1">Thứ hai</option>
+                                        </select>
+                                    </span>
+                                    <div class="input-group" style="margin-left: 15px;width: 132px">
+                                        <select class="form-control" name="color" id="cmb_TimeOne">
+                                            <option value="1">07:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important; width: 100px">
+                                        <select class="form-control" name="color" id="cmb_DayTwo">
+                                            <option value="1">Thứ hai</option>
+                                        </select>
+                                    </span>
+                                    <div class="input-group" style="margin-left: 15px;width: 132px">
+                                        <select class="form-control" name="color" id="cmb_TimeTwo">
+                                            <option value="1">07:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important; width: 100px">
+                                        <select class="form-control" name="color" id="cmb_DayThree">
+                                            <option value="1">Thứ hai</option>
+                                        </select>
+                                    </span>
+                                    <div class="input-group" style="margin-left: 15px;width: 132px">
+                                        <select class="form-control" name="color" id="cmb_TimeThree">
+                                            <option value="1">07:00</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <span class="help_block" style="color: grey;margin-top: 20px">*Chưa có chức năng chỉnh sửa</span>
+                            </div>
+
+<!--FEATURE TO BE ADDED AFTER VERSION 2 IS RELEASED-->
+                                                
+                        </form>
                     </div>
                 </div>
 
@@ -459,56 +580,8 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript">
-        $(document).ready(function() {
-        $('.cabinet-sidebar .cabinet-menu li a').on('click', function(e)  {
-            var clickedAttrLink = $(this).attr('href');
-            $('.cabinet-sidebar-content .cabinet-container ' + clickedAttrLink).show().siblings().hide();
-            $(this).parent('li').addClass('active').siblings().removeClass('active');
-            $(this).children('span').addClass('page-active').parent('a').parent('li').siblings().children('a').children('span').removeClass('page-active');
-            $(this).children('i').addClass('page-active').parent('a').parent('li').siblings().children('a').children('i').removeClass('page-active');
-            e.preventDefault();        
-        });
-        $('.navbar .mp-navbar-right ul li img').on('click', function(e) {
-            document.location.href = "profile.html";
-        });
-        $('.navbar .mp-navbar-right ul li p').on('click', function(e) {
-            document.location.href = "profile.html";
-        });
-    });
-    </script>
-    <script>
-      $( function() {
-        var dateFormat = "mm/dd/yy",
-          from = $( "#from" )
-            .datepicker({
-              defaultDate: "+1w",
-              changeMonth: true,
-              numberOfMonths: 2
-            })
-            .on( "change", function() {
-              to.datepicker( "option", "minDate", getDate( this ) );
-            }),
-          to = $( "#to" ).datepicker({
-            defaultDate: "+1w",
-            changeMonth: true,
-            numberOfMonths: 2
-          })
-          .on( "change", function() {
-            from.datepicker( "option", "maxDate", getDate( this ) );
-          });
-     
-        function getDate( element ) {
-          var date;
-          try {
-            date = $.datepicker.parseDate( dateFormat, element.value );
-          } catch( error ) {
-            date = null;
-          }
-     
-          return date;
-        }
-      } );
-  </script>
+    <script type="text/javascript" src="assets/scripts/app.js"></script>
+    <script type="text/javascript" src="assets/scripts/datePicker.js"></script>
+    <script type="text/javascript" src="assets/scripts/modalPopUp.js"></script>
 </body>
 </html>

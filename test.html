@@ -1,220 +1,292 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Management Portal</title>
-    <link rel="icon" href="assets/images/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery UI Dialog - Modal form</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+
     <script src="assets/scripts/jquery-1.10.2.min.js"></script>
     <script src="assets/scripts/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="assets/scripts/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-fixed-top">
-        <div class="navbar-header">
-            <b>Dr.Q-Muller's Beauty Therapist Centre</b>
-        </div>
-        <div class="mp-navbar-right" style="padding-right: 10px">
-            <ul>
-                <li>
-                    <div class="notification-container">
-                        <p class="notification-icon">2</p>
-                    </div>
-                </li>
-                <li>
-                    <p class="user-profile">Nguyễn Thiên Phúc</p>
-                </li>
-                <li>
-                    <img src="assets/images/account.png" width="70" height="70">
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="mp-cabinet">
-        <div class="cabinet-sidebar">
-            <ul class="cabinet-menu">
-                <li class="active">
-                    <a href="#home">
-                        <i class="glyphicon-custom glyphicon glyphicon-home page-active"></i>
-                        <span class="page-active">Trang chủ</span>
-                    </a>
-                </li>
-                <li class="separator"></li>
-                <li>
-                    <a href="#appointment">
-                        <i class="glyphicon-custom glyphicon glyphicon-list"></i>
-                        <span>Quản Lý Lịch Hẹn</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#schedule">
-                        <i class="glyphicon-custom glyphicon glyphicon-calendar"></i>
-                        <span>Quản Lý Liệu Trình</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#customer">
-                        <i class="glyphicon-custom glyphicon glyphicon-user"></i>
-                        <span>Quản Lý Khách Hàng</span>
-                    </a>
-                </li>
-                <li class="separator"></li>
-                <li>
-                    <a href="#instruction">
-                        <i class="glyphicon-custom glyphicon glyphicon-info-sign"></i>
-                        <span>Hướng Dẫn</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#signout">
-                        <i class="glyphicon-custom glyphicon glyphicon-log-out"></i>
-                        <span>Đăng Thoát</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="cabinet-sidebar-content">
-            <div class="cabinet-container" style="padding-left: 40px !important">
-                <div id="home" class="cabinet-container-item active">
-                    <p>Trang chu</p>
+ 
+    <div id="dialog-form" title="Chi tiết lịch hẹn"> 
+        <form>
+            <div class="form-group" style="padding-top: 20px">
+                <div class="input-group">
+                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important">
+                        <label class="control-label label-bold">Khách hàng</label>
+                    </span>
+                    <input type="text" id="txt_Customer" class="form-control form-control-custom">
                 </div>
-                <div id="appointment" class="cabinet-container-item">
-                    <div class="row">
-                        <div class="col-md-2 datepicker-width-constraint">
-                            <div class="input-group">
-                                <input class="form-control" type="text" id="from" name="from">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-md-2 datepicker-width-constraint">
-                            <div class="input-group">
-                                <input class="form-control" type="text" id="to" name="to">
-                                <span class="input-group-addon">
-                                    <span class="glyphicon glyphicon-calendar"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-bottom: 40px">
-                        <div class="col-md-5">
-                            <span class="help_block" style="font-size: 12px;color: #8f9399">Lưu ý: Định dạng (mm/dd/yy)</span>
-                        </div>
-                    </div>
-                    <div class="row" style="overflow-x: hidden;min-width: 735px;margin-bottom: 25px">
-                        <div class="col-md-10 col-md-offset-1">
-                            <div class="col-md-2 col-md-offset-2 info-container panel" style="box-shadow: rgba(0, 0, 0, 0.14902) 3px 3px 10px 2px">
-                                <div class="panel panel-custom">
-                                    <div class="panel-body">
-                                        <div class="info-head"><p>Đã Xác Nhận</p></div>
-                                        <div class="info-content"><p>15</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-2"></div>
-                            <div class="col-md-2 info-container panel" style="box-shadow: rgba(0, 0, 0, 0.14902) 3px 3px 10px 2px;">
-                                <div class="panel panel-custom">
-                                    <div class="panel-body">
-                                        <div class="info-head"><p>Chưa Xác Nhận</p></div>
-                                        <div class="info-content"><p>5</p></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="panel panel-default col-md-11" style="box-shadow: rgba(0, 0, 0, 0.14902) 3px 3px 10px 2px;">
-                            <div class="col-md-4 col-md-offset-8" style="margin-top: 20px;margin-bottom: 10px">
-                                <div class="input-group" style="width: 100%;position: relative;">
-                                    <input type="text" class="form-control form-control-custom" placeholder="Tìm theo ngày hoặc tên khách hàng" style="width: 70% !important" name="txt_Search" id="txt_Search">
-                                    <span class="glyphicon glyphicon-search" style="position: absolute;font-size: 1.5em; padding-left: 5px; padding-top: 5px"></span>
-                                </div>
-                            </div>
-                            <div>
-                                <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th>Mã lịch hẹn</th>
-                                            <th>Chương trình</th>
-                                            <th>Ngày bắt đầu</th>
-                                            <th>Ngày kết thúc</th>
-                                            <th>Trung tâm</th>
-                                            <th>Tên khách hàng</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>VIP</td>
-                                            <td>15.02.2016</td>
-                                            <td>15.03.2016</td>
-                                            <td>Nguyễn Thị Minh Khai</td>
-                                            <td>Nguyễn Thiên Phúc</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <button id="btn_ExportPDF" class="btn-primary btn col-md-1">PDF</button>
-                        <button id="btn_ExportCSV" class="btn-primary btn col-md-1">Excel</button>
-                    </div>
-                </div>
-                <div id="schedule" class="cabinet-container-item"><p>schedule</p></div>
-                <div id="customer" class="cabinet-container-item"><p>customer</p></div>
-                <div id="instruction" class="cabinet-container-item"><p>instruction</p></div>
             </div>
-        </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important">
+                        <label class="control-label label-bold">Liệu trình</label>
+                    </span>
+                    <div class="input-group" style="margin-left: 15px;width: 85%">
+                        <div class="selectContainer">
+                            <select class="form-control" name="color" id="cmb_Voucher">
+                                <option value="">Liệu trình</option>
+                                <option value="cmb_Smart">Smart Choice</option>
+                                <option value="cmb_Regular">Regular Choice</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important">
+                        <label class="control-label label-bold">Ngày bắt đầu</label>
+                    </span>
+                    <div class="input-group" style="margin-left: 15px">
+                        <input class="form-control" type="text" id="from" name="from">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important">
+                        <label class="control-label label-bold">Ngày kết thúc</label>
+                    </span>
+                    <div class="input-group" style="margin-left: 15px">
+                        <input class="form-control" type="text" id="to" name="to">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important">
+                        <label class="control-label label-bold">Trung tâm</label>
+                    </span>
+                    <div class="input-group" style="margin-left: 15px; width: 85%">
+                        <div class="selectContainer">
+                            <select class="form-control" name="color" id="cmb_Location">
+                                <option value="1">Trần Quang Diệu</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!--FEATURE TO BE ADDED AFTER VERSION 2 IS RELEASED-->
+
+                                <!-- <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important; width: 100px">
+                                            <select class="form-control" name="color" id="cmb_Location">
+                                                <option value="1">Thứ hai</option>
+                                            </select>
+                                        </span>
+                                        <div class="input-group" style="margin-left: 15px;width: 132px">
+                                            <select class="form-control" name="color" id="cmb_Location">
+                                                <option value="1">07:00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important; width: 100px">
+                                            <select class="form-control" name="color" id="cmb_Location">
+                                                <option value="1">Thứ hai</option>
+                                            </select>
+                                        </span>
+                                        <div class="input-group" style="margin-left: 15px;width: 132px">
+                                            <select class="form-control" name="color" id="cmb_Location">
+                                                <option value="1">07:00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon input-group-addon-custom input-group-addon-profile" style="text-align: left !important; width: 100px">
+                                            <select class="form-control" name="color" id="cmb_Location">
+                                                <option value="1">Thứ hai</option>
+                                            </select>
+                                        </span>
+                                        <div class="input-group" style="margin-left: 15px;width: 132px">
+                                            <select class="form-control" name="color" id="cmb_Location">
+                                                <option value="1">07:00</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+<!--FEATURE TO BE ADDED AFTER VERSION 2 IS RELEASED-->
+                                
+        </form>
     </div>
-    <script type="text/javascript">
-        $(document).ready(function() {
-        $('.cabinet-sidebar .cabinet-menu li a').on('click', function(e)  {
-            var clickedAttrLink = $(this).attr('href');
-            $('.cabinet-sidebar-content .cabinet-container ' + clickedAttrLink).show().siblings().hide();
-            $(this).parent('li').addClass('active').siblings().removeClass('active');
-            $(this).children('span').addClass('page-active').parent('a').parent('li').siblings().children('a').children('span').removeClass('page-active');
-            $(this).children('i').addClass('page-active').parent('a').parent('li').siblings().children('a').children('i').removeClass('page-active');
-            e.preventDefault();        
-        });
-    });
-    </script>
+     
+ 
+    <div id="users-contain" class="ui-widget">
+      <h1>Existing Users:</h1>
+      <table id="users" class="ui-widget ui-widget-content">
+        <thead>
+          <tr class="ui-widget-header ">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>john.doe@example.com</td>
+            <td>johndoe1</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button id="create-user">Create new user</button>
+ 
     <script>
-      $( function() {
-        var dateFormat = "mm/dd/yy",
-          from = $( "#from" )
-            .datepicker({
-              defaultDate: "+1w",
-              changeMonth: true,
-              numberOfMonths: 2
-            })
-            .on( "change", function() {
-              to.datepicker( "option", "minDate", getDate( this ) );
-            }),
-          to = $( "#to" ).datepicker({
-            defaultDate: "+1w",
-            changeMonth: true,
-            numberOfMonths: 2
-          })
-          .on( "change", function() {
-            from.datepicker( "option", "maxDate", getDate( this ) );
-          });
-     
-        function getDate( element ) {
-          var date;
-          try {
-            date = $.datepicker.parseDate( dateFormat, element.value );
-          } catch( error ) {
-            date = null;
-          }
-     
-          return date;
-        }
-      } );
-  </script>
+        $( function() {
+            $("#txt_Customer").attr("disabled", "disabled");
+            $("#cmb_Voucher").attr("disabled", "disabled");
+            $("#from").attr("disabled", "disabled");
+            $("#to").attr("disabled", "disabled");
+            $("#cmb_Location").attr("disabled", "disabled");
+
+            var dialog, form,
+            // From http://www.whatwg.org/specs/web-apps/current-work/multipage/states-of-the-type-attribute.html#e-mail-state-%28type=email%29
+            emailRegex = /^[a-zA-Z0-9.!#$%&'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/,
+            name = $( "#name" ),
+            email = $( "#email" ),
+            password = $( "#password" ),
+            allFields = $( [] ).add( name ).add( email ).add( password ),
+            tips = $( ".validateTips" );
+
+            function updateTips( t ) {
+                tips
+                .text( t )
+                .addClass( "ui-state-highlight" );
+                setTimeout(function() {
+                tips.removeClass( "ui-state-highlight", 1500 );
+                }, 500 );
+            }
+
+            function checkLength( o, n, min, max ) {
+                if ( o.val().length > max || o.val().length < min ) {
+                    o.addClass( "ui-state-error" );
+                    updateTips( "Length of " + n + " must be between " + min + " and " + max + "." );
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+            function checkRegexp( o, regexp, n ) {
+                if ( !( regexp.test( o.val() ) ) ) {
+                    o.addClass( "ui-state-error" );
+                    updateTips( n );
+                    return false;
+                } else {
+                    return true;
+                }
+            }
+
+            function addUser() {
+                var valid = true;
+                allFields.removeClass( "ui-state-error" );
+
+                valid = valid && checkLength( name, "username", 3, 16 );
+                valid = valid && checkLength( email, "email", 6, 80 );
+                valid = valid && checkLength( password, "password", 5, 16 );
+
+                valid = valid && checkRegexp( name, /^[a-z]([0-9a-z_\s])+$/i, "Username may consist of a-z, 0-9, underscores, spaces and must begin with a letter." );
+                valid = valid && checkRegexp( email, emailRegex, "eg. ui@jquery.com" );
+                valid = valid && checkRegexp( password, /^([0-9a-zA-Z])+$/, "Password field only allow : a-z 0-9" );
+
+                if ( valid ) {
+                    $( "#users tbody" ).append( "<tr>" +
+                    "<td>" + name.val() + "</td>" +
+                    "<td>" + email.val() + "</td>" +
+                    "<td>" + password.val() + "</td>" +
+                    "</tr>" );
+                    dialog.dialog( "close" );
+                }
+                return valid;
+            }
+
+            dialog = $( "#dialog-form" ).dialog({
+                autoOpen: false,
+                height: 550,
+                width: 500,
+                modal: true,
+                buttons: {
+                    Edit: function() {
+                        $("#cmb_Voucher").removeAttr("disabled");
+                        $("#from").removeAttr("disabled");
+                        $("#to").removeAttr("disabled");
+                        $("#cmb_Location").removeAttr("disabled");
+                    },
+                    "Save": addUser,
+                    
+                },
+                close: function() {
+                    form[ 0 ].reset();
+                    allFields.removeClass( "ui-state-error" );
+                    $("#txt_Customer").attr("disabled", "disabled");
+                    $("#cmb_Voucher").attr("disabled", "disabled");
+                    $("#from").attr("disabled", "disabled");
+                    $("#to").attr("disabled", "disabled");
+                    $("#cmb_Location").attr("disabled", "disabled");
+                }
+            });
+
+            form = dialog.find( "form" ).on( "submit", function( event ) {
+            event.preventDefault();
+            addUser();
+            });
+
+            $( "#create-user" ).button().on( "click", function() {
+                dialog.dialog( "open" );
+            });
+
+            var dateFormat = "mm/dd/yy",
+              from = $( "#from" )
+                .datepicker({
+                  defaultDate: "+1w",
+                  changeMonth: true,
+                  numberOfMonths: 2,
+                })
+                .on( "change", function() {
+                  to.datepicker( "option", "minDate", getDate( this ) );
+                }),
+              to = $( "#to" ).datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 2
+              })
+              .on( "change", function() {
+                from.datepicker( "option", "maxDate", getDate( this ) );
+              });
+         
+            function getDate( element ) {
+              var date;
+              try {
+                date = $.datepicker.parseDate( dateFormat, element.value );
+              } catch( error ) {
+                date = null;
+              }
+              return date;
+            }
+        });
+    </script>
 </body>
 </html>
